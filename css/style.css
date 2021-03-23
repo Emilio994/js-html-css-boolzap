@@ -1,3 +1,9 @@
+/*
+Milestone 1:
+●      Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+●      Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+*/
+
 /* COMMON */
 * {
   padding: 0;
@@ -19,8 +25,15 @@ body {
   align-items: center;
 }
 
+/* Utilities */
+.clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
 
-/* App */
+
+/* App //////////////////////////////////////////////////////////////////////*/
 .app-wrapper {
   margin: 0 auto;
   display: flex;
@@ -28,12 +41,17 @@ body {
   width: 80%;
 }
 
+.miniatures-preview {
+  height: 45px;
+  border-radius: 50%;
+}
+
 .miniatures {
   height: 50px;
   border-radius: 50%;
 }
 
-/* LEFT-SIDE */
+/* LEFT-SIDE //////////////////////////////////////////////////////////////// */
 .left-side {
   display: flex;
   flex-flow: column nowrap;
@@ -49,7 +67,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: 8%;
-  padding: 5px;
+  padding: 5px 10px;
   background: #EAEAEA;
 }
 
@@ -150,6 +168,10 @@ body {
   border: none;
 }
 
+.contact-pack:hover {
+  background: #E9EBEB;
+}
+
 .contact-preview {
   padding: 0px 20px;
 }
@@ -158,7 +180,7 @@ body {
 }
 
 
-/* RIGHT-SIDE */
+/* RIGHT-SIDE ///////////////////////////////////////////////////////// */
 .right-side {
   display: flex;
   flex-flow: column nowrap;
@@ -168,23 +190,127 @@ body {
 
 /* Right-side content */
 
+/* Chat Header */
 .chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 8%;
-  padding: 5px;
+  padding: 5px 10px;
   background: #EAEAEA;
 }
 
+.chat-contact {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.chat-contact-infos {
+  margin-left: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 15px;
+}
+
+.chat-contact-infos span:last-child {
+  font-size: 12px;
+  color: #6B7376;
+}
+
+.chat-contact-options {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-between;
+  width: 12.5%;
+  color: #B1B1B1;
+}
+
+/* Chat window */
 .chat-window {
+  display: flex;
+  flex-flow: column wrap;
   background-image: url(../img/mine.jpg);
   background-size: 50%;
   height: 84%;
   overflow-y: scroll;
+  padding: 40px 70px;
+}
+.chat-window .sent,
+.chat-window .received {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
 }
 
-.chat-message {
+.received .speech-bubble {
+  align-self: flex-start;
+  background: white;
+  margin: 5px 0px;
+}
+.sent .speech-bubble {
+  align-self: flex-end;
+  background: #D5F9BA;
+  margin: 5px 0px;
+}
+.speech-bubble {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 5px;
+  width: 40%;
+}
+.speech-bubble .message {
+  padding: 4px;
+  width: 100%;
+  font-size: 13px;
+}
+.speech-bubble .date {
+  align-self: flex-end;
+  font-size: 9px;
+  color: grey;
+}
+
+/* Chat */
+.chat {
+  display: flex;
+  align-items: center;
+  height: 8%;
+  width: 100%;
   height: 8%;
   background: #F3EEEA;
 }
+.chat i {
+  font-size: 20px;
+  color: #6B7376;
+}
+.emoticons {
+  width: 10%;
+  text-align: center;
+}
+
+.chat-message {
+  width: 80%;
+}
+
+.chat-message input {
+  font-size: 12px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.chat-message input:focus {
+  outline: none;
+}
+
+.chat-audio {
+  text-align: center;
+  width: 10%;
+}
+
 
 
 
