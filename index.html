@@ -22,7 +22,7 @@
           <!-- User interface -->
           <div class="user-header">
             <div class="user-avatar">
-              <img class='miniatures-preview'src="img/avatar_io.jpg" alt="User Avatar">
+              <img class='miniatures-preview' src="img/avatar_io.jpg" alt="User Avatar">
               <span id='user-name'>User Name</span>
             </div>
             <div class="user-commands">
@@ -56,39 +56,12 @@
           </div>
           <!-- Contacts -->
           <div class="contacts">
-            <div class="contact-pack">
+            <div v-for='(contact, index) in contacts' class="contact-pack">
               <div class="contact-avatar">
-                <img class='miniatures' src="img/avatar_1.jpg" alt="Contact">                  
+                <img class='miniatures' :src='path + contact.avatar + extension' alt="Contact">                  
               </div>
               <div class="contact-preview">
-                <span class='contact-name'>Michele</span>
-              </div>
-            </div>
-
-            <div class="contact-pack">
-              <div class="contact-avatar">
-                <img class='miniatures' src="img/avatar_2.jpg" alt="Contact">                  
-              </div>
-              <div class="contact-preview">
-                <span class='contact-name'>Fabio</span>
-              </div>
-            </div>
-
-            <div class="contact-pack">
-              <div class="contact-avatar">
-                <img class='miniatures' src="img/avatar_3.jpg" alt="Contact">                  
-              </div>
-              <div class="contact-preview">
-                <span class='contact-name'>Samuele</span>
-              </div>
-            </div>
-
-            <div class="contact-pack">
-              <div class="contact-avatar">
-                <img class='miniatures' src="img/avatar_4.jpg" alt="Contact">                  
-              </div>
-              <div class="contact-preview">
-                <span class='contact-name'>Luisa</span>
+                <span class='contact-name'>{{ contact.name }}</span>
               </div>
             </div>
 
