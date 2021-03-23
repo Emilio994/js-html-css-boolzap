@@ -19,12 +19,19 @@ body {
   align-items: center;
 }
 
+
+
 /* App */
 .app-wrapper {
   margin: 0 auto;
   display: flex;
   height: 90%;
   width: 80%;
+}
+
+.my-avatar {
+  height: 50px;
+  border-radius: 50%;
 }
 
 /* Left Side */
@@ -37,21 +44,89 @@ body {
 }
 
 /* Left-side content */
+
+/* User-header */
 .user-header {
+  display: flex;
+  justify-content: space-between;
   height: 8%;
+  padding: 5px;
   background: #EAEAEA;
 }
 
+.user-avatar {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-commands {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #B1B1B1;
+  font-size: 20px;
+  width: 25%;
+}
+
+/* Notifications */
 .notifications {
+  display: flex;
+  align-items: center;
   height: 10%;
+  padding: 15px;
   background: #8EDAFC;
 }
 
-.search-mini {
-  background: #FAFAFA;
-  height: 5%;
+.bell-object {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background: white;
+  border-radius: 50%;
+  color: #8EDAFC ;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
+.bell-options p:last-child a {
+  font-size: 12px;
+  color: #697485;
+
+}
+
+/* Searchbar */
+.search-mini {
+  background: #F7F7F7;
+  height: 6%;
+  padding: 5px;
+  color: #BDBCBB
+}
+.search-object {
+  overflow: hidden;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  display: flex;
+  height: 100%;
+  background: white;
+}
+.search-object .my-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%; 
+}
+
+.search-object input {
+  width: 85%;
+  border: none;
+  padding: 0px 4px;
+}
+
+/* Contacs-list */
 .contacts {
   background: #FAFAFA;
   height: 77%;
@@ -71,6 +146,7 @@ body {
 
 .chat-header {
   height: 8%;
+  padding: 5px;
   background: #EAEAEA;
 }
 
