@@ -1,0 +1,92 @@
+/* COMMON */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(to bottom, #009688 15vh, #DBDBD4 15vh);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* App */
+.app-wrapper {
+  margin: 0 auto;
+  display: flex;
+  height: 90%;
+  width: 80%;
+}
+
+/* Left Side */
+.left-side {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc(35% - 1px);
+  height: 100%;
+  border-right: 1px solid lightgrey;
+}
+
+/* Left-side content */
+.user-header {
+  height: 8%;
+  background: #EAEAEA;
+}
+
+.notifications {
+  height: 10%;
+  background: #8EDAFC;
+}
+
+.search-mini {
+  background: #FAFAFA;
+  height: 5%;
+}
+
+.contacts {
+  background: #FAFAFA;
+  height: 77%;
+  overflow-y: scroll;
+}
+
+
+/* Right-Side */
+.right-side {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 65%;
+  height: 100%;
+}
+
+/* Right-side content */
+
+.chat-header {
+  height: 8%;
+  background: #EAEAEA;
+}
+
+.chat-window {
+  background-image: url(../img/mine.jpg);
+  background-size: 50%;
+  height: 84%;
+  overflow-y: scroll;
+}
+
+.chat-message {
+  height: 8%;
+  background: #F3EEEA;
+}
+
+
+
+
+
