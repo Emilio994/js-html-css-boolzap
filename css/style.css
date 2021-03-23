@@ -20,7 +20,6 @@ body {
 }
 
 
-
 /* App */
 .app-wrapper {
   margin: 0 auto;
@@ -29,12 +28,12 @@ body {
   width: 80%;
 }
 
-.my-avatar {
+.miniatures {
   height: 50px;
   border-radius: 50%;
 }
 
-/* Left Side */
+/* LEFT-SIDE */
 .left-side {
   display: flex;
   flex-flow: column nowrap;
@@ -60,6 +59,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
 
 .user-commands {
   display: flex;
@@ -121,20 +121,44 @@ body {
 }
 
 .search-object input {
+  font-size: 12px;
   width: 85%;
   border: none;
   padding: 0px 4px;
 }
 
+.search-object input:focus {
+  border: none;
+  outline: none;
+}
+
 /* Contacs-list */
 .contacts {
   background: #FAFAFA;
-  height: 77%;
+  height: 76%;
   overflow-y: scroll;
 }
 
+.contact-pack {
+  display: flex;
+  width: 100%;
+  padding: 10px 15px;
+  border-bottom: 1px solid lightgrey;
+}
+.contact-pack:first-child {
+  background: #E9EBEB;
+  border: none;
+}
 
-/* Right-Side */
+.contact-preview {
+  padding: 0px 20px;
+}
+.contact-pack span {
+  vertical-align: top;
+}
+
+
+/* RIGHT-SIDE */
 .right-side {
   display: flex;
   flex-flow: column nowrap;
