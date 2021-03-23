@@ -99,6 +99,11 @@ const app = new Vue ({
             },
         ]
 
+    },
+    methods : {
+        imgPath(contact) {
+            return this.path + contact.avatar + this.extension
+        }
     }
 })
 

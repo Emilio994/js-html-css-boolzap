@@ -58,13 +58,13 @@
           <div class="contacts">
             <div v-for='(contact, index) in contacts' class="contact-pack">
               <div class="contact-avatar">
-                <img class='miniatures' :src='path + contact.avatar + extension' alt="Contact">                  
+                <img class='miniatures' :src='imgPath(contact)' alt="Contact">                  
               </div>
               <div class="contact-preview">
                 <span class='contact-name'>{{ contact.name }}</span>
               </div>
             </div>
-
+            
           </div>
 
         </div>
