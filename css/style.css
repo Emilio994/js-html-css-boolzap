@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  min-width: 1200px;
+  min-width: 1000px;
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to bottom, #009688 15vh, #DBDBD4 15vh);
 }
