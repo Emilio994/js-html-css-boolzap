@@ -56,9 +56,9 @@
           </div>
           <!-- Contacts -->
           <div class="contacts">
-            <div v-for='(contact, index) in contacts' class="contact-pack">
+            <div v-for='(contact, index) in contacts' class="contact-pack" @click='setCounter(index)'>
               <div class="contact-avatar">
-                <img class='miniatures' :src='imgPath(contact)' alt="Contact">                  
+                <img class='miniatures' :src='imgPath(contact, index)' alt="Contact">                  
               </div>
               <div class="contact-preview">
                 <span class='contact-name'>{{ contact.name }}</span>
@@ -75,9 +75,9 @@
           <div class="chat-header">
             <!-- Contact preview infos -->
             <div class="chat-contact">
-              <img class='miniatures-preview' src="img/avatar_1.jpg" alt="Contact">         
+              <img class='miniatures-preview' :src="path + contacts[counter].avatar + extension" alt="Contact">         
               <div class="chat-contact-infos">
-                <span class='contact-name'>Michele</span>
+                <span class='contact-name'> {{ contacts[counter].name }}</span>
                 <span class='last-access'>Ultimo accesso oggi alle</span>
               </div>         
             </div>
@@ -93,25 +93,12 @@
           <div class="chat-window">
 
             <!-- Messages -->
-            <div class="sent">
-              <div class="speech-bubble">
-                <span class='message'>Hai portato a spasso il cane?</span>
-                <span class="date">10/01/2020 15:30:55</span>
+              <div v-for='(key, index) in contacts[counter].messages' class="speech-bubble">
+                <div class="bubble-text" :class="(contacts[counter].messages[index].status == 'sent') ? 'message-sent' : 'message-received'">
+                  <span class='message'>{{ contacts[counter].messages[index].text }}</span>
+                  <span class="date">{{ contacts[counter].messages[index].date }}</span>
+                </div>                
               </div>
-              
-              <div class="speech-bubble">
-                <span class='message'>Ricordati di dargli da mangiare</span>
-                <span class="date">10/01/2020 15:50:00</span>
-              </div> 
-            </div>
-
-            <div class="received">
-              <div class="speech-bubble">
-                <span class='message'>Tutto Fatto!</span>
-                <span class="date">10/01/2020 16:15:22</span>
-              </div> 
-            </div>
-
 
           </div>
           <!-- Chat message -->
@@ -122,7 +109,6 @@
 
             <div class="chat-message">
               <input type="text" name="chatMessage" id="" placeholder="Scrivi un messaggio">
-
             </div>
 
             <div class="chat-audio">

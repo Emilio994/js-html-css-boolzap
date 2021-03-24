@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  width: 100%;
+  min-width: 1200px;
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to bottom, #009688 15vh, #DBDBD4 15vh);
 }
@@ -17,13 +17,6 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-/* Utilities */
-.clearfix {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 
@@ -107,7 +100,6 @@ body {
 .bell-options p:last-child a {
   font-size: 12px;
   color: #697485;
-
 }
 
 /* Searchbar */
@@ -173,7 +165,7 @@ body {
 /* RIGHT-SIDE ///////////////////////////////////////////////////////// */
 .right-side {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   width: 65%;
   height: 100%;
 }
@@ -219,15 +211,14 @@ body {
 /* Chat window */
 .chat-window {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   background-image: url(../img/mine.jpg);
   background-size: 50%;
   height: 84%;
   overflow-y: scroll;
   padding: 40px 70px;
 }
-.chat-window .sent,
-.chat-window .received {
+.chat-window .speech-bubble {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
@@ -244,16 +235,30 @@ body {
   margin: 5px 0px;
 }
 .speech-bubble {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.speech-bubble .bubble-text {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 5px;
   width: 40%;
+  padding: 5px;
+  border-radius: 10px;
 }
+
+.speech-bubble .bubble-text.message-sent {
+  background: #D5F9BA;
+  align-self: flex-end;
+}
+
+.speech-bubble .bubble-text.message-received {
+  background: white;
+  align-self: flex-start;
+}
+
 .speech-bubble .message {
-  padding: 3px;
-  width: 100%;
+  margin: 5px;
   font-size: 13px;
 }
 .speech-bubble .date {
@@ -299,6 +304,15 @@ body {
 .chat-audio {
   text-align: center;
   width: 10%;
+}
+
+/* Media Query */
+@media screen and (max-width : 1200px) {
+  .app-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
 
