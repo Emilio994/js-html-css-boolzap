@@ -145,6 +145,7 @@ body {
 
 .contact-pack {
   display: flex;
+  flex-wrap: nowrap;
   width: 100%;
   padding: 10px 15px;
   border-bottom: 1px solid lightgrey;
@@ -154,11 +155,17 @@ body {
   background: #E9EBEB;
 }
 
-.contact-preview {
-  padding: 0px 20px;
+.last-message {
+  font-size: 13px;
+  color: grey;
+}
+.last-date {
+  font-size: 10px;
+  color: grey;
 }
 .contact-pack span {
   vertical-align: top;
+  margin-left: 10px;
 }
 
 
@@ -258,8 +265,19 @@ body {
 }
 
 .speech-bubble .message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 5px;
   font-size: 13px;
+}
+.speech-bubble .message i {
+  visibility: hidden;
+  font-size: 12px;
+  color: #B1B1B1;
+}
+.speech-bubble .bubble-text:hover .message i {
+  visibility: visible;
 }
 .speech-bubble .date {
   align-self: flex-end;

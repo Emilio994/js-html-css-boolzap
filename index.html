@@ -59,9 +59,12 @@
             <div v-for='(contact, index) in contacts' class="contact-pack" @click='setCounter(index)' v-if= 'contactSearch(contact)'>
               <div class="contact-avatar">
                 <img class='miniatures' :src='imgPath(contact, index)' alt="Contact">                  
-              </div>
+              </div>              
               <div class="contact-preview">
-                <span class='contact-name'>{{ contact.name }}</span>
+                <span class='contact-name'>{{ contact.name }}</span><br>
+                <span class='last-message'>{{ contact.messages[contact.messages.length - 1].text }}</span><br>
+                <span class='last-date'>{{ contact.messages[contact.messages.length - 1].date }}</span>
+                
               </div>
             </div>
             
@@ -77,7 +80,7 @@
             <div class="chat-contact">
               <img class='miniatures-preview' :src="path + contacts[counter].avatar + extension" alt="Contact">         
               <div class="chat-contact-infos">
-                <span class='contact-name'> {{ contacts[counter].name }}</span>
+                <span class='contact-name'> {{ contacts[counter].name }} </span>
                 <span class='last-access'>Ultimo accesso oggi alle {{ myTime() }} </span>
               </div>         
             </div>
@@ -95,7 +98,7 @@
             <!-- Messages -->
               <div v-for='(key, index) in contacts[counter].messages' class="speech-bubble">
                 <div class="bubble-text" :class="(contacts[counter].messages[index].status == 'sent') ? 'message-sent' : 'message-received'">
-                  <span class='message'>{{ contacts[counter].messages[index].text }}</span>
+                  <span class='message'>{{ contacts[counter].messages[index].text }} <i class="fas fa-chevron-down"></i></span>
                   <span class="date">{{ contacts[counter].messages[index].date }}</span>
                 </div>                
               </div>
