@@ -50,13 +50,13 @@
               <div class="my-label">
                 <label for="my-search"><i class="fas fa-search"></i></label>
               </div>            
-            <input name='my-search' type="text" placeholder="Cerca o inizia una nuova chat">
+            <input v-model='mySearch' name='my-search' type="text" placeholder="Cerca o inizia una nuova chat">
             </div>            
 
           </div>
           <!-- Contacts -->
           <div class="contacts">
-            <div v-for='(contact, index) in contacts' class="contact-pack" @click='setCounter(index)'>
+            <div v-for='(contact, index) in contacts' class="contact-pack" @click='setCounter(index)' v-if= 'contactSearch(contact)'>
               <div class="contact-avatar">
                 <img class='miniatures' :src='imgPath(contact, index)' alt="Contact">                  
               </div>
@@ -78,7 +78,7 @@
               <img class='miniatures-preview' :src="path + contacts[counter].avatar + extension" alt="Contact">         
               <div class="chat-contact-infos">
                 <span class='contact-name'> {{ contacts[counter].name }}</span>
-                <span class='last-access'>Ultimo accesso oggi alle</span>
+                <span class='last-access'>Ultimo accesso oggi alle {{ myTime() }} </span>
               </div>         
             </div>
 
@@ -108,7 +108,7 @@
             </div>
 
             <div class="chat-message">
-              <input type="text" name="chatMessage" id="" placeholder="Scrivi un messaggio">
+              <input @keyup.13='sendMessage()' v-model='myMessage' type="text" name="chatMessage" id="" placeholder="Scrivi un messaggio">
             </div>
 
             <div class="chat-audio">
