@@ -139,12 +139,17 @@ const app = new Vue ({
             return this.counter = index;
         },
 
-        sendMessage() {        
-            this.contacts[this.counter].messages.push({date : this.myTime(), text : this.myMessage, status : 'sent'})
-            this.myMessage = ''; 
-            setTimeout(function(){
+        sendMessage() {
+            if (this.myMessage !== '') {
+                
+                this.contacts[this.counter].messages.push({date : this.myTime(), text : this.myMessage, status : 'sent'})
+                this.myMessage = ''; 
+                setTimeout(function(){
                 app.contacts[app.counter].messages.push({date : app.myTime(), text : 'ok', status : 'received'})
-            }, 1000)           
+                }, 1000) 
+
+            }      
+                      
         },
 
         attachZero(value) {
@@ -175,6 +180,8 @@ const app = new Vue ({
 
     }
 })
+
+
 
 
 
