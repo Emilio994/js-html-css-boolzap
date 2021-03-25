@@ -104,13 +104,16 @@ html {
   font-size: 20px;
   margin-right: 10px;
 }
+
 .bell-options p:first-child {
   color: rgba(0, 0, 0, 0.7);
 }
+
 .bell-options p:last-child a {
   font-size: 12px;
   color: #697485;
 }
+
 
 /* Searchbar */
 .search-mini {
@@ -119,6 +122,7 @@ html {
   padding: 5px;
   color: #BDBCBB
 }
+
 .search-object {
   overflow: hidden;
   border: 1px solid rgb(236, 236, 236);
@@ -127,6 +131,7 @@ html {
   height: 100%;
   background: white;
 }
+
 .search-object .my-label {
   display: flex;
   justify-content: center;
@@ -155,7 +160,7 @@ html {
 
 .contact-pack {
   display: flex;
-  flex-wrap: nowrap;
+  align-items: center;
   width: 100%;
   padding: 10px 15px;
   border-bottom: 1px solid lightgrey;
@@ -164,6 +169,16 @@ html {
 .contact-pack:hover {
   background: #E9EBEB;
   cursor: pointer;
+}
+
+.contact-avatar {
+  height: fit-content;
+  width: fit-content;
+}
+
+.contact-preview {
+  height: fit-content;
+  width: fit-content;
 }
 
 .contact-name {
@@ -178,10 +193,11 @@ html {
   font-size: 10px;
   color: grey;
 }
-.contact-pack span {
-  vertical-align: top;
+.contact-preview span {
   margin-left: 10px;
 }
+
+
 
 
 /* RIGHT-SIDE ///////////////////////////////////////////////////////// */

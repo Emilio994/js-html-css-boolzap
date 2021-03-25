@@ -56,15 +56,14 @@
           </div>
           <!-- Contacts -->
           <div class="contacts">
-            <div v-for='(contact, index) in contacts' class="contact-pack" @click='setCounter(index)' v-if= 'contactSearch(contact)'>
+            <div v-for='(contact, index) in contacts' class="contact-pack clearfix" @click='setCounter(index)' v-if= 'contactSearch(contact)'>
               <div class="contact-avatar">
                 <img class='miniatures' :src='imgPath(contact, index)' alt="Contact">                  
               </div>              
               <div class="contact-preview">
                 <span class='contact-name'>{{ contact.name }}</span><br>
                 <span class='last-message'>{{ contact.messages[contact.messages.length - 1].text }}</span><br>
-                <span class='last-date'>{{ contact.messages[contact.messages.length - 1].date }}</span>
-                
+                <span class='last-date'>{{ contact.messages[contact.messages.length - 1].date }}</span>                
               </div>
             </div>
             

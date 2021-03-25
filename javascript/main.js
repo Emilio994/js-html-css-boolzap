@@ -148,9 +148,20 @@ const app = new Vue ({
                 
                 this.contacts[this.counter].messages.push({date : this.myTime(), text : this.myMessage, status : 'sent'})
                 this.myMessage = ''; 
+
                 setTimeout(function(){
-                app.contacts[app.counter].messages.push({date : app.myTime(), text : 'ok', status : 'received'})
-                }, 1000) 
+                app.contacts[app.counter].messages.push({date : app.myTime(), text : 'ok', status : 'received'});
+                app.$nextTick(() => {
+                    let myIndex = app.contacts[app.counter].messages.length - 1;
+                    let myMsg = document.getElementsByClassName('message')[myIndex];
+                    myMsg.scrollIntoView();
+                });
+                }, 1000);
+                app.$nextTick(() => {
+                    let myIndex = app.contacts[app.counter].messages.length - 1;
+                    let myMsg = document.getElementsByClassName('message')[myIndex];
+                    myMsg.scrollIntoView();
+                });  
 
             }      
                       
@@ -183,7 +194,9 @@ const app = new Vue ({
         },
 
     }
+        
 })
+
 
 
 
