@@ -166,10 +166,17 @@ const app = new Vue ({
             if (this.mySearch == '' || subject.includes(this.mySearch.toLowerCase())) {
                 return true;
             }
-        }
+        },
+
+        deleteMessage(index) {
+            this.contacts[this.counter].messages[index].text = 'Message deleted';
+            document.getElementsByTagName('button')[index].blur();
+        },
 
     }
 })
+
+
 
 
 

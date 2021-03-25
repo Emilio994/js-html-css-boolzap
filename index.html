@@ -98,7 +98,15 @@
             <!-- Messages -->
               <div v-for='(key, index) in contacts[counter].messages' class="speech-bubble">
                 <div class="bubble-text" :class="(contacts[counter].messages[index].status == 'sent') ? 'message-sent' : 'message-received'">
-                  <span class='message'>{{ contacts[counter].messages[index].text }} <i class="fas fa-chevron-down"></i></span>
+                  <span class='message' :class='(contacts[counter].messages[index].text == "Message deleted") ? "grey" : null '>{{ contacts[counter].messages[index].text }}
+                    <button>
+                      <i  class="fas fa-chevron-down">
+                        <div @click='deleteMessage(index)' class="dropdown">
+                          <span>Delete message</span>
+                        </div>
+                      </i>
+                    </button>                                                              
+                  </span>
                   <span class="date">{{ contacts[counter].messages[index].date }}</span>
                 </div>                
               </div>
