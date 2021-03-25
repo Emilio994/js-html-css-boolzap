@@ -285,6 +285,7 @@ html {
   border: none;
   background: none;
 }
+
 .speech-bubble .message button:focus {
   outline: none;
 }
@@ -293,7 +294,6 @@ html {
 .speech-bubble .message button:focus i {
   visibility: visible;
 }
-
 
 .speech-bubble .message i {
   position: relative;
@@ -330,9 +330,7 @@ html {
   background: rgb(241, 241, 241);
   cursor: pointer;
 }
-.speech-bubble .message .dropdown span {
-  transition: 0.25s; 
-}
+
 .speech-bubble .message .dropdown:active span {
   font-size: 11px;
 }
