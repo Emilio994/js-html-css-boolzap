@@ -43,6 +43,10 @@ const app = new Vue ({
         extension : '.jpg',
         myMessage : '',
         mySearch : '',
+        user : {
+            name :'Username',
+            avatar : '_io'
+        },
         contacts: [
             {
                 name: 'Michele',

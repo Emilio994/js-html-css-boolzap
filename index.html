@@ -22,8 +22,8 @@
           <!-- User interface -->
           <div class="user-header">
             <div class="user-avatar">
-              <img class='miniatures-preview' src="img/avatar_io.jpg" alt="User Avatar">
-              <span id='user-name'>User Name</span>
+              <img class='miniatures-preview' :src="path + user.avatar + extension" alt="User Avatar">
+              <span id='user-name'>{{ user.name }}</span>
             </div>
             <div class="user-commands">
               <i class="fas fa-circle-notch"></i>
